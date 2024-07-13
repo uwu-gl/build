@@ -1257,12 +1257,10 @@ dont_bother_goals := out product-graph
 # consistency with those defined in BoardConfig.mk files.
 include $(BUILD_SYSTEM)/android_soong_config_vars.mk
 
-ifneq ($(LINEAGE_BUILD),)
 ifneq ($(wildcard device/lineage/sepolicy/common/sepolicy.mk),)
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
 $(eval include device/lineage/sepolicy/common/sepolicy.mk)
-endif
 endif
 
 ifeq ($(CALLED_FROM_SETUP),true)
